@@ -165,8 +165,8 @@ Usually this will be given by the data model.</p>
 </div>
 <div class="paragraph">
 <p>Devices request to subscribe to messages in the same way - by sending the broker a special “subscribe” mesage with the name of the topic they want to subscribe to.
-Here, they may use wildcard symbols <code><mark></code> and <code>+</code>. The <code>+</code> symbol replaces one level, e.g. <code>building1/floor1/+/door</code> addresses the doors in all rooms on the first floor of building 1 - i.e. <code>building1/floor1/room101/door</code>, <code>building1/floor1/room102/door</code>, <code>building1/floor1/toilets/door</code> etc.
-The <code></mark></code> wildcard symbol replaces one or more levels and must always be last.
+Here, they may use wildcard symbols <code>#</code> and <code>+</code>. The <code>+</code> symbol replaces one level, e.g. <code>building1/floor1/+/door</code> addresses the doors in all rooms on the first floor of building 1 - i.e. <code>building1/floor1/room101/door</code>, <code>building1/floor1/room102/door</code>, <code>building1/floor1/toilets/door</code> etc.
+The <code>\#</code> wildcard symbol replaces one or more levels and must always be last.
 Subscribing to topic <code>building1/floor1/#</code> means that messages will be received with all topics pertaining to the first floor of building 1.</p>
 </div>
 <div class="paragraph">
