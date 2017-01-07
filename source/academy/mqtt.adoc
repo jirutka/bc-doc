@@ -40,8 +40,8 @@ The important thing is that the publisher and subscriber agree in advance on the
 Usually this will be given by the data model.
 
 Devices request to subscribe to messages in the same way - by sending the broker a special “subscribe” mesage with the name of the topic they want to subscribe to.
-Here, they may use wildcard symbols `#` and `+`. The `+` symbol replaces one level, e.g. `building1/floor1/+/door` addresses the doors in all rooms on the first floor of building 1 - i.e. `building1/floor1/room101/door`, `building1/floor1/room102/door`, `building1/floor1/toilets/door` etc.
-The `#` wildcard symbol replaces one or more levels and must always be last.
+Here, they may use wildcard symbols `\#` and `+`. The `+` symbol replaces one level, e.g. `building1/floor1/+/door` addresses the doors in all rooms on the first floor of building 1 - i.e. `building1/floor1/room101/door`, `building1/floor1/room102/door`, `building1/floor1/toilets/door` etc.
+The `\#` wildcard symbol replaces one or more levels and must always be last.
 Subscribing to topic `building1/floor1/#` means that messages will be received with all topics pertaining to the first floor of building 1.
 
 There is one more note regarding naming convention:
