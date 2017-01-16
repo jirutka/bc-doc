@@ -16,6 +16,7 @@ gem 'coderay', '~> 1.1'
 gem 'middleman-core', '~> 4.1'
 gem 'middleman-cli', '~> 4.1'
 gem 'middleman-asciidoc'
+gem 'kramdown', '~> 1.2'
 
 # This fork just removes platform-specific dependencies from gemspec.
 # See https://github.com/guard/listen/issues/416

@@ -4,6 +4,7 @@ require_relative 'lib/middleman_helpers'
 helpers MiddlemanHelpers
 
 config[:layouts_dir] = '_layouts'
+config[:markdown_engine] = :kramdown
 config[:sass_assets_paths] << Foundation.scss_path
 
 # Custom config variables
