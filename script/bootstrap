@@ -41,12 +41,6 @@ if ! has bundler; then
 	gem install bundler --no-document
 fi
 
-if [ "${BUILD_ENV:-}" = 'production' ]; then
-	export BUNDLE_WITHOUT='development'
-fi
-# Workaround for https://github.com/bundler/bundler/issues/3288
-sed -i.orig '/BUNDLE_WITHOUT/d' .bundle/config 2>/dev/null || true
-
 if ! bundle check >/dev/null 2>&1; then
 	if ! (cd .gem; ruby -e 'require "mkmf"; exit MakeMakefile.have_devel? ? 0 : 1'); then
 		die 'Ruby header files or C/C++ toolchain not installed' \
