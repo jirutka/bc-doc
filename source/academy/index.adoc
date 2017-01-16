@@ -1,8 +1,0 @@
-= Academy
-:page-nav-weight: 3
-
-It is BigClown's commitment and passion to not only deliver hardware components but also educate people in technologies and approaches in modern home automation.
-
-We believe we can create a useful set of educative resources which will help you to explore the wonders of Internet-of-Things at your home.
-
-Feel free to let us know if you have any ideas for improvements or fixes.

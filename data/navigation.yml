@@ -1,20 +1,28 @@
 ---
-- /projects: Projects
+- ---: Hardware
   ::
-    - /projects/bridge: Bridge Project
-    - /projects/workroom: Workroom Project
+    - /headers: Headers & Signals
+- ---: Projects
+  ::
+    - /workroom: Workroom Project
+    - /bridge: Bridge Project
+    - /doorbell: Tweeting Doorbell Project
+- ---: Integrations
+  ::
+    - /blynk: Blynk - Mobile App Builder
+    - /node-red: Node RED - Visual Tool for IoT
+    - /ifttt: IFTTT - If This Then That
+- ---: Reference
+  ::
+    - /i2c-space: i2c-space.md
 - ---: Tutorials
   ::
-    - /tutorial/blynk: Blynk – Mobile App Builder
-    - /tutorial/core-module: Core Module
-    - /tutorial/ifttt: IFTTT – If This Then That
-    - /tutorial/mosquitto: Mosquitto – MQTT Broker
-    - /tutorial/node-red: Node RED – Visual Tool for IoT
-    - /tutorial/install-rpi: Raspberry Pi – Installation
-- /academy: Academy
+    - /blynk: Blynk – Mobile App Builder
+    - /core-module: Core Module
+    - /raspberry-pi-installation: Raspberry Pi – Installation
+    - /mosquitto: Mosquitto – MQTT Broker
+- ---: Academy
   ::
-    - /academy/clown-talk: Clown.Talk & Clown.Model
-    - /academy/i2c: I²C – Communication Interface
-    - /academy/mqtt: MQTT – Messaging via Broker
-    - /academy/websocket: WebSocket – Real-time Protocol
-- /hardware: Hardware Description
+    - /i2c: I²C – Communication Interface
+    - /mqtt: MQTT – Messaging via Broker
+    - /websocket: WebSocket – Real-time Protocol
