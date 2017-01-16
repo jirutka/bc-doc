@@ -1,11 +1,16 @@
-<% resource ||= root_page %>
+<% nav_links ||= navigation %>
 <% level ||= 1 %>
 <ul>
-  <% for child in nested_pages(resource) %>
+  <% for item in nav_links %>
   <li class="level<%= level %>">
-    <%= link_to_page child %>
-    <% unless nested_pages(child).empty? %>
-      <%= partial '_layouts/pages-tree', locals: { resource: child, level: level + 1 } %>
+    <% if item.resource %>
+      <%= link_to item.title, item.resource, {
+            class: ('current' if current_resource == item.resource) } %>
+    <% else %>
+      <%= item.title %>
+    <% end %>
+    <% unless item.children.empty? %>
+      <%= partial '_layouts/pages-tree', locals: { nav_links: item.children, level: level + 1 } %>
     <% end %>
   </li>
   <% end %>

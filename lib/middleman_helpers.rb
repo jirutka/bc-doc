@@ -1,9 +1,11 @@
 require 'naturally'
+require 'yaml'
 require_relative 'core_ext'
 
 module MiddlemanHelpers
 
   GITHUB_URL = 'https://github.com'
+  NAVIGATION_FILE = File.join(__dir__, '../data/navigation.yml')
 
   # Returns URI of the current page's source file in the GitHub repository for
   # online edit.
@@ -52,31 +54,29 @@ module MiddlemanHelpers
     end
   end
 
-  #### Navigation ####
+  #### Static Navigation ####
 
-  def link_to_page(resource)
-    link_to(nav_title(resource), resource, {
-      class: ('current' if current_resource == resource)
-    })
-  end
+  NavLink = Struct.new('NavLink', :title, :resource, :children)
 
-  # Returns title of the page for using in navigation.
-  def nav_title(resource)
-    resource.data['nav-title'] || resource.data.title
-  end
-
-  # Returns children pages of the given page sorted by nav-weight and title.
-  def nested_pages(resource)
-    children = resource.children
-      .reject { |r| r.data.key? 'nav-hidden' }
-      .find_all { |r| nav_title(r) }
-    Naturally.sort_by(children) do |r|
-      [r.data['nav-weight'] || 100, nav_title(r).downcase]
-    end
+  def navigation
+    transform_nav YAML.load_file(NAVIGATION_FILE)
   end
 
   # Returns root page (index) of the site.
   def root_page
     sitemap.find_resource_by_path(config.index_file)
+  end
+
+  private
+
+  def transform_nav(items)
+    (items || []).map do |item|
+      path, title = item.first
+      resource = ["#{path}.html", "#{path}/index.html"]
+        .map { |path| sitemap.find_resource_by_path(path) }
+        .compact.first
+
+      NavLink.new(title, resource, transform_nav(item[':']))
+    end
   end
 end

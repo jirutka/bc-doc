@@ -1,0 +1,20 @@
+---
+- /projects: Projects
+  ::
+    - /projects/bridge: Bridge Project
+    - /projects/workroom: Workroom Project
+- ---: Tutorials
+  ::
+    - /tutorial/blynk: Blynk – Mobile App Builder
+    - /tutorial/core-module: Core Module
+    - /tutorial/ifttt: IFTTT – If This Then That
+    - /tutorial/mosquitto: Mosquitto – MQTT Broker
+    - /tutorial/node-red: Node RED – Visual Tool for IoT
+    - /tutorial/install-rpi: Raspberry Pi – Installation
+- /academy: Academy
+  ::
+    - /academy/clown-talk: Clown.Talk & Clown.Model
+    - /academy/i2c: I²C – Communication Interface
+    - /academy/mqtt: MQTT – Messaging via Broker
+    - /academy/websocket: WebSocket – Real-time Protocol
+- /hardware: Hardware Description
